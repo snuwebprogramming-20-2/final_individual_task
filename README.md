@@ -3,6 +3,7 @@
 ## 개요
 
 가상의 코인 거래소를 제쟉한다. 유저는 회원가입, 자산 조회, 시세 조회, 구매 및 판매의 행위를 할 수 있다.  
+수업 시간에 배운 nodejs, mongodb를 활용하여 구현한다.
 
 ## 가격조회
 
@@ -66,7 +67,20 @@ response
 
 
 ### /coins/:coin_name/buy
-코인을 구매한다.
+코인을 구매한다. 가격은 실시간으로 가져온 api의 가격을 따른다.
+[:POST]
+:auth_required  
+
+request
+- quantity: number. 소수점 4번째 자리까지.
+
+response
+구매결과를 리턴한다.
+- {price: 30000, quantity: 1}
+
+
+### /coins/:coin_name/sell
+코인을 판매한다. 가격은 실시간으로 가져온 api의 가격을 따른다.
 [:POST]
 :auth_required  
 
@@ -76,21 +90,26 @@ request
 
 
 response
-- 
+구매결과를 리턴한다.
+- {price: 30000, quantity: 1}
 
-## 기본 스펙
 
 
 
 ## models
 
-## 심화 스펙
+다음의 모델들이 구현되어 있어야 한다.  
 
-* jwt 를 이용한 로그인 구현 (https://jwt.io/)
+users, keys, coins, assets
 
-## 제출일
+## 추가 스펙
+
+- 코인 2종 추가.  
+- 로그인 시 jwt사용하기.(http://jwt.io)  
+- 코드샌드박스에 올려, url을 같이 제출.
+- 코인 구매, 판매 시 전량구매/전량판매 기능 구현. (ex - xrp 전량 구매 => 사용가능한 usd를 다 사용하여 xrp구매)
 
 
-## 제출방법
-
-etl 기말과제 
+## 제출
+12.11 까지. etl을 통해 제출. 코드를 압축하여(node_modules제외) 제출.  
+하루 늦을 때마다 5% 감점. 13일까지 제출 받음.
