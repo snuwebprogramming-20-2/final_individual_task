@@ -56,7 +56,7 @@ response
 
 ### /assets
 본인의 자산을 조회한다. 없는 자산의 경우 노출시키지 않는다.
-[:GET]
+[:GET]  
 :auth_required  
 
 
