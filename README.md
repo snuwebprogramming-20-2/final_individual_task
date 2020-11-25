@@ -111,5 +111,5 @@ users, keys, coins, assets
 
 
 ## 제출
-12.11 까지. etl을 통해 제출. 코드를 압축하여(node_modules제외) 제출.  
+12.12 까지. etl을 통해 제출. 코드를 압축하여(node_modules제외) 제출.  
 하루 늦을 때마다 5% 감점. 13일까지 제출 받음.
