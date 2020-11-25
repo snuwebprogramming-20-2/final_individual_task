@@ -6,9 +6,9 @@
 
 ## 가격조회
 
-가격은 https://www.coingecko.com/en/api 의 api를 이용해서 가져온다.  
-편의상 코인의 
-가격은 https://www.coingecko.com/en/api 의 api를 이용해서 가져온다.
+가격은 https://www.coingecko.com/en/api 의 api를 이용해서 가져온다. (https://www.coingecko.com/api/documentations/v3#/simple/get_simple_price)  
+거래가능한 코인의 종류는 btc, xrp, eth, bch 4가지로 제한한다.  
+
 
 ## api 명세
 
@@ -19,6 +19,8 @@ authentication 필요한 코드의 경우, header의 Authorization에 Bearer: {K
 
 
 ### /register
+회원가입 시 유저에게 10,000$를 제공한다.  
+[:POST]
 
 request
 
@@ -29,8 +31,52 @@ request
 
 
 response
-- success: true/false
+ - {}
 
+### /login
+[:POST]
+
+request
+- email
+- password
+
+
+response
+- {key: {key}}
+
+### /coins
+[:GET]
+
+request
+
+
+response
+- ["btc", "xrp", "bch", "eth"]
+
+### /assets
+본인의 자산을 조회한다. 없는 자산의 경우 노출시키지 않는다.
+[:GET]
+:auth_required  
+
+
+request
+
+response
+- ["usd: 3000, "btc": 1, "xrp": 2, "bch": 3, "eth": 4]
+
+
+### /coins/:coin_name/buy
+코인을 구매한다.
+[:POST]
+:auth_required  
+
+
+request
+- quantity: number. 소수점 4번째 자리까지.
+
+
+response
+- 
 
 ## 기본 스펙
 
