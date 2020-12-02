@@ -113,6 +113,10 @@ response
 
 users, keys, coins, assets
 
+## 라이브러리
+
+express, mongoose, jsonwebtoken, coingecko-api, express-validator
+
 ## 추가 스펙
 
 - 코인 2종 추가.  
