@@ -65,6 +65,17 @@ request
 response
 - ["usd": 3000, "btc": 1, "xrp": 2, "bch": 3, "eth": 4]
 
+### /coins/:coin_name
+코인의 현재 시세를 보여준다.
+[:GET]
+
+request
+- 
+
+response
+가격 조회결과를 리턴한다.
+- {price: 30000 }
+
 
 ### /coins/:coin_name/buy
 코인을 구매한다. 가격은 실시간으로 가져온 api의 가격을 따른다.
