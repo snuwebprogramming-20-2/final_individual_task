@@ -63,7 +63,7 @@ response
 request
 
 response
-- ["usd": 3000, "btc": 1, "xrp": 2, "bch": 3, "eth": 4]
+- {"usd": 3000, "btc": 1, "xrp": 2, "bch": 3, "eth": 4}
 
 ### /coins/:coin_name
 코인의 현재 시세를 보여준다.
