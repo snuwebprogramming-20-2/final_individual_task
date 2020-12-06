@@ -124,6 +124,21 @@ express, mongoose, jsonwebtoken, coingecko-api, express-validator
 - 코드샌드박스에 올려, url을 같이 제출.
 - 코인 구매, 판매 시 전량구매/전량판매 기능 구현. (ex - xrp 전량 구매 => 사용가능한 usd를 다 사용하여 xrp구매)
 
+### JWT
+
+- https://www.npmjs.com/package/jsonwebtoken 이용  
+- key 제작 시 publicKey, secretKey를 database에 저장. 클라이언트에게 두값을 모두 전달. (로그인 시 publicKey, secretKey라는 키를 전달)
+- 클라이언트는 매 요청 제작시마다, token을 생성. token의 exp = 현재시간. data에는 퍼블릭 키를 전달.  
+```
+jwt.sign({
+  exp: Math.floor(Date.now() / 1000) + (60 * 5),
+  data: 'publicKey'
+}, 'secretKey');
+```
+
+ - 서버에서는 publicKey로 등록된 secretKey를 검색하여, 해당 토큰이 1) 유효한지 2) 시간이 유효한지를 검사하여 token의 valid를 체크.
+ 
+ 
 
 ## 제출
 12.12 까지. etl을 통해 제출. 
