@@ -137,7 +137,7 @@ ex) {all: true}
 ```
 jwt.sign({
   exp: Math.floor(Date.now() / 1000) + (60 * 5),
-  data: {}
+  data: {pub: 'pubKey' }
 }, 'secretKey');
 ```
 
