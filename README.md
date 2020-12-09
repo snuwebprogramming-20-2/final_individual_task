@@ -115,7 +115,7 @@ users, keys, coins, assets
 
 ## 라이브러리
 
-express, mongoose, jsonwebtoken, coingecko-api, express-validator. node-fetch, axios
+express, mongoose, jsonwebtoken, coingecko-api, express-validator. node-fetch, axios, dotenv
 
 ## 추가 스펙
 
